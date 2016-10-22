@@ -13,6 +13,11 @@ if ( ! $_tests_dir ) {
 // Give access to tests_add_filter() function.
 require_once $_tests_dir . '/includes/functions.php';
 
+// Override wp_redirect
+function wp_redirect( $location, $status = 302 ) {
+	TestGoodbyePlease::wp_redirect( $location, $status );
+}
+
 /**
  * Manually load the plugin being tested.
  */
