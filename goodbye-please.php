@@ -6,7 +6,7 @@
  * Author: Charles Fulton
  * Author URI: https://www.lafayette.edu
  * Plugin URI:
- * Text Domain: goodbye_please
+ * Text Domain: goodbye-please
  * Domain Path: /languages
  * @package goodbye_please
  */
@@ -31,14 +31,14 @@ class Goodbye_Please {
 		register_setting( 'goodbye_please_settings_group', 'goodbye_please_settings', array( 'Goodbye_Please', 'sanitize' ) );
 		add_settings_section(
 			'goodbye_please_settings_section',
-			__( 'Plugin settings', 'goodbye_please', 'goodbye-please' ),
+			__( 'Plugin settings', 'goodbye-please' ),
 			array( 'Goodbye_Please', 'goodbye_please_settings_section_callback' ),
 			'goodbye_please_settings_group'
 		);
 
 		add_settings_field(
 			'goodbye_please_page',
-			__( 'Goodbye Page', 'goodbye_please', 'goodbye-please' ),
+			__( 'Goodbye Page', 'goodbye-please' ),
 			array( 'Goodbye_Please', 'goodbye_please_page_render' ),
 			'goodbye_please_settings_group',
 			'goodbye_please_settings_section'
@@ -54,7 +54,7 @@ class Goodbye_Please {
 	}
 
 	function goodbye_please_settings_section_callback() {
-		echo __( 'Configure a forced landing page for the site here.', 'goodbye_please', 'goodbye-please' );
+		echo __( 'Select a page to display to all visitors. All requests will be redirected to this page.', 'goodbye-please' );
 	}
 
 	function goodbye_please_page_render() {
