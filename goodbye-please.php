@@ -31,14 +31,14 @@ class Goodbye_Please {
 		register_setting( 'goodbye_please_settings_group', 'goodbye_please_settings', array( 'Goodbye_Please', 'sanitize' ) );
 		add_settings_section(
 			'goodbye_please_settings_section',
-			__( 'Plugin settings', 'goodbye_please' ),
+			__( 'Plugin settings', 'goodbye_please', 'goodbye-please' ),
 			array( 'Goodbye_Please', 'goodbye_please_settings_section_callback' ),
 			'goodbye_please_settings_group'
 		);
 
 		add_settings_field(
 			'goodbye_please_page',
-			__( 'Goodbye Page', 'goodbye_please' ),
+			__( 'Goodbye Page', 'goodbye_please', 'goodbye-please' ),
 			array( 'Goodbye_Please', 'goodbye_please_page_render' ),
 			'goodbye_please_settings_group',
 			'goodbye_please_settings_section'
@@ -54,14 +54,14 @@ class Goodbye_Please {
 	}
 
 	function goodbye_please_settings_section_callback() {
-		echo __( 'Configure a forced landing page for the site here.', 'goodbye_please' );
+		echo __( 'Configure a forced landing page for the site here.', 'goodbye_please', 'goodbye-please' );
 	}
 
 	function goodbye_please_page_render() {
 		$options = get_option( 'goodbye_please_settings' );
 		wp_dropdown_pages(
 			array(
-				'show_option_none' => __( 'No page selected...' ),
+				'show_option_none' => __( 'No page selected...', 'goodbye-please' ),
 				'selected' => $options['goodbye_please_page'],
 				'name' => 'goodbye_please_settings[goodbye_please_page]',
 			)
