@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Goodbye Please
- * Version: 1.0.0
+ * Version: 1.0.1
  * Description: This plugin redirects all public-facing page requests to an existing page.
  * Author: Charles Fulton
  * Author URI: https://www.lafayette.edu
