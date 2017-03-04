@@ -25,14 +25,14 @@ before_script:
   - sed -i "s/example.com/localhost/" $plugin_dir/behat.yml
   - sed -i "s@path/to/wordpress@$WP_DEVELOP_DIR@" $plugin_dir/behat.yml
   - sed -i "s/username:\ admin/username:\ root/" $plugin_dir/behat.yml
-  - sed -i "s/password:\ admin/password:\ /" $plugin_dir/behat.yml
+  - sed -i "s/password:\ admin/password:\ password/" $plugin_dir/behat.yml
   - mysql -e 'CREATE DATABASE wordpress;' -uroot
   - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
   - chmod +x wp-cli.phar
   - mv wp-cli.phar $WP_DEVELOP_DIR/wp
   - export PATH="$WP_DEVELOP_DIR:$PATH"
   - cd $WP_DEVELOP_DIR
-  - wp core install --url=localhost --title="Test site" --admin_user="root" --admin_password="" --admin_email="admin@example.net" --skip-email
+  - wp core install --url=localhost --title="Test site" --admin_user="root" --admin_password="password" --admin_email="admin@example.net" --skip-email
   - cd $plugin_dir
   - composer install --no-interaction --prefer-source --dev
 
