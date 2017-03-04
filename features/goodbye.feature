@@ -1,7 +1,6 @@
 Feature: Redirecting all traffic to a single page
 
     Background:
-	    Given I am logged in as an admin
         And there are posts:
             | post_title      | post_content              | post_status | post_author | post_type |
             | Just my article | The content of my article | publish     | admin       | post      |
@@ -9,7 +8,8 @@ Feature: Redirecting all traffic to a single page
 			| Moving day      | Go away                   | publish     | admin       | page      |
 
     Scenario: List my blog posts
-        Given I am on the homepage
+		Given I am logged in as "admin"
+        And I am on the homepage
         Then I should see "Just my article"
         And I should not see "My draft"
 		And I am on the Dashboard
