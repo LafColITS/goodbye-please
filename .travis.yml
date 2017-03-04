@@ -22,7 +22,7 @@ before_script:
   - sed -i "s/database_name_here/wordpress/" wp-config.php
   - sed -i "s/username_here/root/" wp-config.php
   - sed -i "s/password_here//" wp-config.php
-  - sed -i "s/example.com/localhost/" $plugin_dir/behat.yml
+  - sed -i "s/example.com/localhost:8000/" $plugin_dir/behat.yml
   - sed -i "s@path/to/wordpress@$WP_DEVELOP_DIR@" $plugin_dir/behat.yml
   - mysql -e 'CREATE DATABASE wordpress;' -uroot
   - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -30,7 +30,7 @@ before_script:
   - mv wp-cli.phar $WP_DEVELOP_DIR/wp
   - export PATH="$WP_DEVELOP_DIR:$PATH"
   - cd $WP_DEVELOP_DIR
-  - wp core install --url=localhost --title="Test site" --admin_user="admin" --admin_password="admin" --admin_email="admin@example.net" --skip-email
+  - wp core install --url="localhost" --title="Test site" --admin_user="admin" --admin_password="admin" --admin_email="admin@example.net" --skip-email
   - "(php -S localhost:8000 &) 2> /dev/null > /dev/null"
   - cd $plugin_dir
   - composer install --no-interaction --prefer-source --dev
