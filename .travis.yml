@@ -25,7 +25,7 @@ before_script:
   - sed -i "s/admin@example.org/admin@example.net/" wp-tests-config.php
   - sed -i "s/example.org/localhost/" wp-tests-config.php
   - sed -i "s/example.com/localhost/" $plugin_dir/behat.yml
-  - sed -i "s/path\/to\/wordpress/$WP_DEVELOP_DIR" $plugin_dir/behat.yml
+  - sed -i "s/path\/to\/wordpress/$WP_DEVELOP_DIR/" $plugin_dir/behat.yml
   - sed -i "s/username:\ admin/username:\ root/" $plugin_dir/behat.yml
   - sed -i "s/password:\ admin/password:\ /" $plugin_dir/behat.yml
   - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
