@@ -8,6 +8,10 @@ php:
 env:
   - WP_VERSION=master WP_MULTISITE=0
 
+-before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+
 before_script:
   - export WP_DEVELOP_DIR=/tmp/wordpress/
   - mkdir -p $WP_DEVELOP_DIR
@@ -32,9 +36,10 @@ before_script:
   - cd $WP_DEVELOP_DIR
   - wp core install --url="localhost:8000" --title="Test site" --admin_user="admin" --admin_password="admin" --admin_email="admin@example.net" --skip-email
   - "(php -S localhost:8000 &) 2> /dev/null > /dev/null"
+  - "wget http://selenium-release.storage.googleapis.com/2.46/selenium-server-standalone-2.46.0.jar"
+  - "(java -jar selenium-server-standalone-2.46.0.jar &) 2> /dev/null > /dev/null"
   - cd $plugin_dir
   - composer install --no-interaction --prefer-source --dev
-  - vendor/paulgibbs/behat-wordpress-extension/bin/travis/selenium.sh
 
 script:
   - wp plugin activate goodbye-please
