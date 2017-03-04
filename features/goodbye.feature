@@ -7,6 +7,7 @@ Feature: Redirecting all traffic to a single page
             | My draft        | This is just a draft      | draft       | admin       | post      |
 			| Moving day      | Go away                   | publish     | admin       | page      |
 
+	@javascript
     Scenario: List my blog posts
 		Given I am logged in as an admin
         And I am on the homepage
