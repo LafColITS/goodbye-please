@@ -30,7 +30,7 @@ before_script:
   - mv wp-cli.phar $WP_DEVELOP_DIR/wp
   - export PATH="$WP_DEVELOP_DIR:$PATH"
   - cd $WP_DEVELOP_DIR
-  - wp core install --url="localhost" --title="Test site" --admin_user="admin" --admin_password="admin" --admin_email="admin@example.net" --skip-email
+  - wp core install --url="localhost:8000" --title="Test site" --admin_user="admin" --admin_password="admin" --admin_email="admin@example.net" --skip-email
   - "(php -S localhost:8000 &) 2> /dev/null > /dev/null"
   - "wget http://selenium-release.storage.googleapis.com/2.46/selenium-server-standalone-2.46.0.jar"
   - "(java -jar selenium-server-standalone-2.46.0.jar &) 2> /dev/null > /dev/null"
