@@ -33,8 +33,8 @@ before_script:
   - composer install --no-interaction --prefer-source --dev
   - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
   - chmod +x wp-cli.phar
-  - mv wp-cli.phar wp
-  - export PATH="$plugin_dir:$PATH"
+  - mv wp-cli.phar $WP_DEVELOP_DIR/wp
+  - export PATH="$WP_DEVELOP_DIR:$PATH"
 
 script:
   - vendor/bin/behat
