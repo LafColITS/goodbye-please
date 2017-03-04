@@ -8,7 +8,7 @@ Feature: Redirecting all traffic to a single page
 			| Moving day      | Go away                   | publish     | admin       | page      |
 
     Scenario: List my blog posts
-		Given I am logged in as "admin"
+		Given I am logged in as an admin
         And I am on the homepage
         Then I should see "Just my article"
         And I should not see "My draft"
