@@ -10,34 +10,36 @@
     "packages-dev": [
         {
             "name": "behat/behat",
-            "version": "v3.1.0",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Behat.git",
-                "reference": "359d987b3064d78f2d3a6ba3a355277f3b09b47f"
+                "reference": "15a3a1857457eaa29cdf41564a5e421effb09526"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/359d987b3064d78f2d3a6ba3a355277f3b09b47f",
-                "reference": "359d987b3064d78f2d3a6ba3a355277f3b09b47f",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/15a3a1857457eaa29cdf41564a5e421effb09526",
+                "reference": "15a3a1857457eaa29cdf41564a5e421effb09526",
                 "shasum": ""
             },
             "require": {
-                "behat/gherkin": "~4.4",
+                "behat/gherkin": "^4.4.4",
                 "behat/transliterator": "~1.0",
+                "container-interop/container-interop": "^1.1",
                 "ext-mbstring": "*",
                 "php": ">=5.3.3",
-                "symfony/class-loader": "~2.1|~3.0",
-                "symfony/config": "~2.3|~3.0",
-                "symfony/console": "~2.1|~3.0",
-                "symfony/dependency-injection": "~2.1|~3.0",
-                "symfony/event-dispatcher": "~2.1|~3.0",
-                "symfony/translation": "~2.3|~3.0",
-                "symfony/yaml": "~2.1|~3.0"
+                "symfony/class-loader": "~2.1||~3.0",
+                "symfony/config": "~2.3||~3.0",
+                "symfony/console": "~2.5||~3.0",
+                "symfony/dependency-injection": "~2.1||~3.0",
+                "symfony/event-dispatcher": "~2.1||~3.0",
+                "symfony/translation": "~2.3||~3.0",
+                "symfony/yaml": "~2.1||~3.0"
             },
             "require-dev": {
+                "herrera-io/box": "~1.6.1",
                 "phpunit/phpunit": "~4.5",
-                "symfony/process": "~2.1|~3.0"
+                "symfony/process": "~2.5|~3.0"
             },
             "suggest": {
                 "behat/mink-extension": "for integration with Mink testing framework",
@@ -50,7 +52,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1.x-dev"
+                    "dev-master": "3.2.x-dev"
                 }
             },
             "autoload": {
@@ -86,7 +88,7 @@
                 "symfony",
                 "testing"
             ],
-            "time": "2016-03-28 07:04:45"
+            "time": "2016-12-25 13:43:52"
         },
         {
             "name": "behat/gherkin",
@@ -477,6 +479,37 @@
             "time": "2015-09-28 16:26:35"
         },
         {
+            "name": "container-interop/container-interop",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/container-interop/container-interop.git",
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Container\\": "src/Interop/Container/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
+            "homepage": "https://github.com/container-interop/container-interop",
+            "time": "2017-02-14 19:40:03"
+        },
+        {
             "name": "fabpot/goutte",
             "version": "v3.2.1",
             "source": {
@@ -830,22 +863,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/paulgibbs/behat-wordpress-extension.git",
-                "reference": "6bc0760783fb924bacff8fe0361a6f85aa61c320"
+                "reference": "827c646be312c1702ba8e75726aa29a10598ab7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paulgibbs/behat-wordpress-extension/zipball/6bc0760783fb924bacff8fe0361a6f85aa61c320",
-                "reference": "6bc0760783fb924bacff8fe0361a6f85aa61c320",
+                "url": "https://api.github.com/repos/paulgibbs/behat-wordpress-extension/zipball/827c646be312c1702ba8e75726aa29a10598ab7a",
+                "reference": "827c646be312c1702ba8e75726aa29a10598ab7a",
                 "shasum": ""
             },
             "require": {
-                "behat/behat": "~3.1.0",
-                "behat/mink-extension": "~2.2.0",
+                "behat/behat": "^3.1.0",
                 "behat/mink-goutte-driver": "~1.2.0",
                 "php": ">=5.6.0",
-                "sensiolabs/behat-page-object-extension": "~2.0.0",
-                "symfony/config": "^2.8",
-                "symfony/dependency-injection": "^2.8"
+                "sensiolabs/behat-page-object-extension": "~2.0.0"
             },
             "require-dev": {
                 "behat/mink-selenium2-driver": "~1.3.1",
@@ -884,7 +914,56 @@
                 "extension",
                 "wordpress"
             ],
-            "time": "2017-03-02 13:52:29"
+            "time": "2017-03-04 17:28:50"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14 16:28:37"
         },
         {
             "name": "psr/http-message",
@@ -1165,24 +1244,24 @@
         },
         {
             "name": "symfony/config",
-            "version": "v2.8.17",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "747fa191136cf798409183c501435aa4c16184df"
+                "reference": "9f99453e77771e629af8a25eeb0a6c4ed1e19da2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/747fa191136cf798409183c501435aa4c16184df",
-                "reference": "747fa191136cf798409183c501435aa4c16184df",
+                "url": "https://api.github.com/repos/symfony/config/zipball/9f99453e77771e629af8a25eeb0a6c4ed1e19da2",
+                "reference": "9f99453e77771e629af8a25eeb0a6c4ed1e19da2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
-                "symfony/filesystem": "~2.3|~3.0.0"
+                "php": ">=5.5.9",
+                "symfony/filesystem": "~2.8|~3.0"
             },
             "require-dev": {
-                "symfony/yaml": "~2.7|~3.0.0"
+                "symfony/yaml": "~3.0"
             },
             "suggest": {
                 "symfony/yaml": "To use the yaml reference dumper"
@@ -1190,7 +1269,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -1217,7 +1296,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-05 10:11:19"
+            "time": "2017-02-14 16:27:43"
         },
         {
             "name": "symfony/console",
@@ -1394,28 +1473,28 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v2.8.17",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "1dfbf6a9e30113a9c4e482ab056e969c70c37a19"
+                "reference": "130aa55b8ed7e6d0d75b0ed37256cec687a22f41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/1dfbf6a9e30113a9c4e482ab056e969c70c37a19",
-                "reference": "1dfbf6a9e30113a9c4e482ab056e969c70c37a19",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/130aa55b8ed7e6d0d75b0ed37256cec687a22f41",
+                "reference": "130aa55b8ed7e6d0d75b0ed37256cec687a22f41",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9"
             },
             "conflict": {
-                "symfony/expression-language": "<2.6"
+                "symfony/yaml": "<3.2"
             },
             "require-dev": {
-                "symfony/config": "~2.2|~3.0.0",
-                "symfony/expression-language": "~2.6|~3.0.0",
-                "symfony/yaml": "~2.3.42|~2.7.14|~2.8.7|~3.0.7"
+                "symfony/config": "~2.8|~3.0",
+                "symfony/expression-language": "~2.8|~3.0",
+                "symfony/yaml": "~3.2"
             },
             "suggest": {
                 "symfony/config": "",
@@ -1426,7 +1505,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -1453,7 +1532,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-27 23:54:58"
+            "time": "2017-02-16 22:46:52"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1573,16 +1652,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.0.9",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "b2da5009d9bacbd91d83486aa1f44c793a8c380d"
+                "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/b2da5009d9bacbd91d83486aa1f44c793a8c380d",
-                "reference": "b2da5009d9bacbd91d83486aa1f44c793a8c380d",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
+                "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
                 "shasum": ""
             },
             "require": {
@@ -1591,7 +1670,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -1618,7 +1697,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-20 05:43:46"
+            "time": "2017-01-08 20:47:33"
         },
         {
             "name": "symfony/polyfill-mbstring",

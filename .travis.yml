@@ -30,7 +30,11 @@ before_script:
   - sed -i "s/password:\ admin/password:\ /" $plugin_dir/behat.yml
   - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
   - cd $plugin_dir
-  - composer install
+  - composer install --no-interaction --prefer-source --dev
+  - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+  - chmod +x wp-cli.phar
+  - mv wp-cli.phar wp
+  - export PATH="$plugin_dir:$PATH"
 
 script:
   - vendor/bin/behat
