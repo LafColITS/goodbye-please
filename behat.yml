@@ -30,3 +30,8 @@ default:
         admin:
           username: admin
           password: admin
+    Bex\Behat\ScreenshotExtension:
+      active_image_drivers: upload_pie
+        image_drivers:
+          upload_pie:
+            expire: '30m'

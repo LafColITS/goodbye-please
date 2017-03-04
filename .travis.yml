@@ -33,7 +33,7 @@ before_script:
   - wp core install --url="localhost:8000" --title="Test site" --admin_user="admin" --admin_password="admin" --admin_email="admin@example.net" --skip-email
   - "(php -S localhost:8000 &) 2> /dev/null > /dev/null"
   - "wget http://selenium-release.storage.googleapis.com/2.46/selenium-server-standalone-2.46.0.jar"
-  #- "(java -jar selenium-server-standalone-2.46.0.jar &) 2> /dev/null > /dev/null"
+  - "(java -jar selenium-server-standalone-2.46.0.jar &) 2> /dev/null > /dev/null"
   - cd $plugin_dir
   - composer install --no-interaction --prefer-source --dev
 
