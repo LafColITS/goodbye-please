@@ -34,9 +34,7 @@ before_script:
   - "(php -S localhost:8000 &) 2> /dev/null > /dev/null"
   - cd $plugin_dir
   - composer install --no-interaction --prefer-source --dev
-
-before_script:
-  - $plugin_dir/vendor/paulgibbs/behat-wordpress-extension/bin/travis/selenium.sh
+  - vendor/paulgibbs/behat-wordpress-extension/bin/travis/selenium.sh
 
 script:
   - wp plugin activate goodbye-please
