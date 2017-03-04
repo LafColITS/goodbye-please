@@ -8,10 +8,6 @@ php:
 env:
   - WP_VERSION=master WP_MULTISITE=0
 
-before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-
 before_script:
   - export WP_DEVELOP_DIR=/tmp/wordpress/
   - mkdir -p $WP_DEVELOP_DIR
@@ -40,6 +36,9 @@ before_script:
   - "(java -jar selenium-server-standalone-2.46.0.jar &) 2> /dev/null > /dev/null"
   - cd $plugin_dir
   - composer install --no-interaction --prefer-source --dev
+
+before_script:
+  - vendor/paulgibbs/behat-wordpress-extension/bin/travis/selenium.sh
 
 script:
   - wp plugin activate goodbye-please
