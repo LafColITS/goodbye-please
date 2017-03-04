@@ -22,7 +22,7 @@ default:
             guzzle_parameters:
               verify: false  # Allow self-signed SSL certificates
         selenium2:
-          selenium2: ~
+          wd_host: 'http://localhost:4444/wd/hub'
 
     PaulGibbs\WordpressBehatExtension:
       path: /path/to/wordpress
