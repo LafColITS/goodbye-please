@@ -34,7 +34,13 @@ before_script:
   - "(php -S localhost:8000 &) 2> /dev/null > /dev/null"
   - cd $plugin_dir
   - composer install --no-interaction --prefer-source --dev
-  - vendor/paulgibbs/behat-wordpress-extension/bin/travis/selenium.sh
+  - rm -f /tmp/.X0-lock
+  - Xvfb > /dev/null 2>&1 &
+  - export DISPLAY=localhost:0.0
+  - wget -O selenium.jar http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
+  - java -jar selenium.jar -p 4444 > /dev/null 2>&1 &
+  - ls -l $WP_DEVELOP_DIR
+  - sleep 5
 
 script:
   - wp plugin activate goodbye-please
