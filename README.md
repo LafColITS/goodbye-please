@@ -2,8 +2,8 @@
 **Contributors:** [mackensen](https://profiles.wordpress.org/mackensen)  
 **Tags:** redirect  
 **Requires at least:** 3.7  
-**Tested up to:** 4.7  
-**Stable tag:** 1.0.1  
+**Tested up to:** 4.8  
+**Stable tag:** 1.0.2  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -32,5 +32,8 @@ new URL but you want to retire the old URL.
 
 ## Changelog ##
 
+### 1.0.2 ###
+* Resolved various PHP notices
+
 ### 1.0 ###
-* Initial relase
+* Initial release
