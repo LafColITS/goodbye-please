@@ -30,6 +30,10 @@ new URL but you want to retire the old URL.
 * The plugin does not support posts; you must use a page
 * The plugin does not support external redirection; you may combine it with Page Links To to achieve this effect
 
+== Privacy ==
+
+This plugin neither collects nor stores any personal, private, or identifying information about any user.
+
 == Changelog ==
 
 = 1.0.2 =
