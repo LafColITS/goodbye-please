@@ -35,6 +35,8 @@ new URL but you want to retire the old URL.
 This plugin neither collects nor stores any personal, private, or identifying information about any user.
 
 ## Changelog ##
+### 1.0.3 ###
+* Added privacy declaration to README.
 
 ### 1.0.2 ###
 * Resolved various PHP notices
